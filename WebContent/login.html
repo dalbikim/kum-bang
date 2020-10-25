@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <title>금방-로그인</title>
+      <link rel="stylesheet" href="assets/css/login.css" />
+   </head>
+   
+   <body>
+      <div class="login-form">
+         <h1>금방</h1>
+         <form action="auth" method="POST">
+            <input type="text" name="userId" placeholder="ID" required>
+            <input type="password" name="userPw" placeholder="Password" required>
+            <button type="submit">로그인</button>
+            <p><a href="findId.html" class="findId">아이디 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="findPw.html" class="findPw">비밀번호 찾기</a></p>   
+         </form>
+      </div>
+   </body>
+</html>

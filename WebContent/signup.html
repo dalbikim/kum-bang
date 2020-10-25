@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport"content="width=device-width, initial-scale=1, user-scalable=no">
+   <title>금방-회원가입</title>
+   <link rel="stylesheet" href="assets/css/signup.css" />
+</head>
+
+<body>
+   <div class="signup-form">
+      <h1>회원가입</h1>
+      <form action="auth" method="POST">
+         <label>아이디 <input type="text" name="userId" placeholder="ID" required>
+         <button type="button" class="check">중복확인</button>
+         </label><br>
+         <label>비밀번호 <input type="password" name="userPw" placeholder="Password" required></label>
+         <label>이름 <input type="text" name="userName" placeholder="한글 또는 영문만 입력가능" required></label>
+         <label>이메일 <input type="email" name="userEmail" placeholder="hello@kumoh.ac.kr" required></label>
+         <label>휴대폰번호 <input type="tel" name="userPhoneNum" placeholder="010xxxxxxxx" required></label>
+         <label>주소 <input type="text" name="address" required></label>
+         <label>성별 <input type="radio" name="sex" value="남자">남자 <input type="radio" name="sex" value="여자">여자</label><br>
+         <label>생년월일 <input type="date" name="birthday" required></label>
+         <button type="submit">회원가입</button>
+      </form>
+   </div>
+</body>
+</html>

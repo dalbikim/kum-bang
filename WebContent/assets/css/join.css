@@ -44,3 +44,17 @@
    font-weight: bold;
    color: #ffffff;
 }
+
+.signup-form button[type="button"] {
+	text-align: center;
+	height: 47px;
+	float: right;
+   width: 30%;
+   padding: 15px;
+   background-color: #ffa7a7;
+   border: 0;
+   box-sizing: border-box;
+   cursor: pointer;
+   font-weight: bold;
+   color: #000000;
+}

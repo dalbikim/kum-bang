@@ -10,6 +10,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import board.DBConnect;
+
 public class MemberDAOImpl implements MemberDAO
 {
 	private static MemberDAOImpl instance = new MemberDAOImpl();
@@ -18,37 +20,42 @@ public class MemberDAOImpl implements MemberDAO
 		return instance;
 	}
 	
-	private Connection getConn() throws Exception
-	{
-		// Obtain our environment naming context
-		Context initCtx = new InitialContext();
-		Context envCtx = (Context)initCtx.lookup("java:comp/env");
-		
-		// DataSource 를 검색
-		// "jdbc/kum-bang/member"은 web.xml과 context.xml에 설정되어 있는 name값
-		DataSource ds = (DataSource)envCtx.lookup("jdbc/kum-bang/member");
-		return ds.getConnection();
-	}
+	DBConn dbconn = null;
+	
+	public MemberDAOImpl() { dbconn = new DBConn(); }
+	
+//	private Connection getConn() throws Exception
+//	{
+//		// Obtain our environment naming context
+//		Context initCtx = new InitialContext();
+//		Context envCtx = (Context)initCtx.lookup("java:comp/env");
+//		
+//		// DataSource 를 검색
+//		// "jdbc/kum-bang/member"은 web.xml과 context.xml에 설정되어 있는 name값
+//		DataSource ds = (DataSource)envCtx.lookup("jdbc/kum-bang/member");
+//		return ds.getConnection();
+//	}
 	
 	// 회원가입
 	public void createMember(MemberDTO vo)
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		PreparedStatement pstmt = null;
 		
 		try
 		{
-			conn = getConn();
-			String sql = "INSERT INTO member VALUES(?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO member (memberID, memberPW, memberName, phoneNum, emailAddress, memberAddress, birthday, sex, memberAuthority) VALUES(?,?,?,?,?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, vo.getMemberID());
 			pstmt.setString(2, vo.getMemberPW());
 			pstmt.setString(3, vo.getMemberName());
-			pstmt.setString(4, vo.getEmailAddress());
-			pstmt.setString(5, vo.getPhoneNum());
+			pstmt.setString(4, vo.getPhoneNum());
+			pstmt.setString(5, vo.getEmailAddress());
 			pstmt.setString(6, vo.getMemberAddress());
-			pstmt.setString(7, vo.getSex());
-			pstmt.setString(8, vo.getBirthday());
+			pstmt.setString(7, vo.getBirthday());
+			pstmt.setString(8, vo.getSex());
+			pstmt.setString(9, vo.getMemberAuthority());
 			
 			pstmt.executeUpdate();
 		}
@@ -66,14 +73,13 @@ public class MemberDAOImpl implements MemberDAO
 	
 	public ArrayList<MemberDTO> readMember() // member 전체 조회
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		ArrayList<MemberDTO> arr = new ArrayList<MemberDTO>();
 		
 		try
 		{
-			conn = getConn();
 			String sql = "select * from member";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -109,14 +115,13 @@ public class MemberDAOImpl implements MemberDAO
 
 	public MemberDTO readMember(String memberID) // member 상세 조회
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		MemberDTO dto = null;
 		
 		try
 		{
-			conn = getConn();
 			String sql = "select * from member where memberID='"+memberID+"'";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -151,14 +156,13 @@ public class MemberDAOImpl implements MemberDAO
 
 	public int updateMember(MemberDTO vo) // member 수정
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		PreparedStatement pstmt = null;
 		
 		int flag = 0;
 		
 		try
 		{
-			conn = getConn();
 			String sql = "update member set memberPW=?, memberName=?, phoneNum=?, emailAddress=?, memberAddress=? where memberID=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getMemberPW());
@@ -187,12 +191,11 @@ public class MemberDAOImpl implements MemberDAO
 	@Override
 	public void deleteMember(String memberID) // member 삭제
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		
 		try
 		{
-			conn = getConn();
 			String sql = "delete from member where memberID='"+memberID+"'";
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sql);
@@ -211,14 +214,13 @@ public class MemberDAOImpl implements MemberDAO
 	
 	public String idCheck(String memberID) // ID 중복 체크
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		String flag = "yes"; // 사용 가능
 
 		try
 		{
-			conn = getConn();
 			String sql = "select * from member where memberID='"+memberID+"'";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -245,7 +247,7 @@ public class MemberDAOImpl implements MemberDAO
 	// 로그인 체크(비회원: -1, 회원: 0, 관리자: 1, PW 오류: 2)
 	public int loginCheck(String memberID, String memberPW)
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		
@@ -253,7 +255,6 @@ public class MemberDAOImpl implements MemberDAO
 		
 		try
 		{
-			conn = getConn();
 			String sql = "SELECT memberPW, memberAuthority FROM member WHERE memberID='"+memberID+"'";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -288,7 +289,7 @@ public class MemberDAOImpl implements MemberDAO
 	@Override
 	public int countMember() // 전체 회원 수
 	{
-		Connection conn = null;
+		Connection conn = dbconn.getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		
@@ -296,7 +297,6 @@ public class MemberDAOImpl implements MemberDAO
 		
 		try
 		{
-			conn = getConn();
 			String sql = "SELECT count(*) FROM member";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);

@@ -63,21 +63,16 @@ if (size2 < 0) {
 				<header id="header"> <%@ include file="../header.jsp"%>
 				</header>
 
-
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr height="5">
 						<td width="5"></td>
 					</tr>
 					<tr text-align:center>
-						<td width="5"><img src="../img/table_left.gif" width="5"
-							height="30" /></td>
 						<td width="73">번호</td>
 						<td width="379">제목</td>
 						<td width="73">작성자</td>
 						<td width="164">작성일</td>
 						<td width="58">조회수</td>
-						<td width="7"><img src="../img/table_right.gif" width="5"
-							height="30" /></td>
 						</tr>
 						<%
 							if (total == 0) {

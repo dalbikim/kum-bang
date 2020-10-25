@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<jsp:useBean id="dao" class="board.DAO"/>
-<jsp:useBean id="vo" class="board.VO"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:useBean id="dao" class="board.model.BoardDAO"/>
+<jsp:useBean id="vo" class="board.model.BoardDTO"/>
 <jsp:setProperty name="vo" property="*" />
 			
 <%
@@ -12,14 +12,14 @@
 			dao.delete(idx);
 		%>
 			<script language=javascript>
-				self.window.alert("ÇØ´ç ±ÛÀ» »èÁ¦ÇÏ¿´½À´Ï´Ù.");
+				self.window.alert("ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				location.href="list.jsp?pg=<%=pg%>";
 			</script>
 		<%
 	} else {
 		%>
 			<script language=javascript>
-				self.window.alert("ºñ¹Ð¹øÈ£¸¦ Æ²·È½À´Ï´Ù.");
+				self.window.alert("ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ Æ²ï¿½È½ï¿½ï¿½Ï´ï¿½.");
 				location.href="javascript:history.back()";
 			</script>
 		<%

@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%@ page import="board.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="board.model.*"%>
 
-<jsp:useBean id="dao" class="board.DAO" />
+<jsp:useBean id="dao" class="board.model.BoardDAO" />
 
 <%
 	int idx = Integer.parseInt(request.getParameter("idx"));
 int pg = Integer.parseInt(request.getParameter("pg"));
-VO vo = dao.getView(idx);
+BoardDTO vo = dao.getView(idx);
 dao.UpdateHit(idx);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>°Ô½ÃÆÇ</title>
+<title>ê²Œì‹œíŒ</title>
 <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body>
@@ -21,27 +21,27 @@ dao.UpdateHit(idx);
 		<tr>
 			<td>
 				<table>
-						<td align="center">³» ¿ë</td>
+						<td align="center">ë‚´ ìš©</td>
 	
 				</table>
 				<table>
 					<tr>
 						<td>&nbsp;</td>
-						<td align="center">±Û¹øÈ£</td>
+						<td align="center">ê¸€ë²ˆí˜¸</td>
 						<td ><%=idx%></td>
 						<td>&nbsp;</td>
 					</tr>
 						<td colspan="4"></td>
 					<tr>
 						<td>&nbsp;</td>
-						<td align="center">Á¶È¸¼ö</td>
+						<td align="center">ì¡°íšŒìˆ˜</td>
 						<td><%=vo.getHit()%></td>
 						<td>&nbsp;</td>
 					</tr>
 						<td colspan="4"></td>
 					<tr>
 						<td>&nbsp;</td>
-						<td align="center">ÀÌ¸§</td>
+						<td align="center">ì´ë¦„</td>
 						<td><%=vo.getName()%></td>
 						<td>&nbsp;</td>
 					</tr>
@@ -49,7 +49,7 @@ dao.UpdateHit(idx);
 					
 					<tr>
 						<td>&nbsp;</td>
-						<td align="center">ÀÛ¼ºÀÏ</td>
+						<td align="center">ì‘ì„±ì¼</td>
 						<td><%=vo.getTime()%></td>
 						<td>&nbsp;</td>
 					</tr>
@@ -57,7 +57,7 @@ dao.UpdateHit(idx);
 					
 					<tr>
 						<td>&nbsp;</td>
-						<td align="center">Á¦¸ñ</td>
+						<td align="center">ì œëª©</td>
 						<td><%=vo.getTitle()%></td>
 						<td>&nbsp;</td>
 					</tr>
@@ -69,15 +69,15 @@ dao.UpdateHit(idx);
 					</tr>
 					<tr align="center">
 						<td>&nbsp;</td>
-						<td colspan="2"><input type=button value="±Û¾²±â"
+						<td colspan="2"><input type=button value="ê¸€ì“°ê¸°"
 							OnClick="window.location='write.jsp'"> <input type=button
-							value="´ä±Û"
+							value="ë‹µê¸€"
 							OnClick="window.location='reply.jsp?idx=<%=idx%>&pg=<%=pg%>'">
-							<input type=button value="¸ñ·Ï"
+							<input type=button value="ëª©ë¡"
 							OnClick="window.location='list.jsp?pg=<%=pg%>'"> <input
-							type=button value="¼öÁ¤"
+							type=button value="ìˆ˜ì •"
 							OnClick="window.location='modify.jsp?idx=<%=idx%>&pg=<%=pg%>'">
-							<input type=button value="»èÁ¦"
+							<input type=button value="ì‚­ì œ"
 							OnClick="window.location='delete.jsp?idx=<%=idx%>&pg=<%=pg%>'">
 						<td>&nbsp;</td>
 					</tr>

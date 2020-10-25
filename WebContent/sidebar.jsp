@@ -1,98 +1,102 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-	
-	<div class="inner">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<div class="inner">
 
 
 
-				<!-- Search -->
-				<section id="search" class="alt">
-					<form method="post" action="#">
-						<input type="text" name="query" id="query" placeholder="Search" />
-					</form>
-				</section>
+	<!-- Search -->
+	<section id="search" class="alt">
+		<form method="post" action="#">
+			<input type="text" name="query" id="query" placeholder="Search" />
+		</form>
+	</section>
 
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-					<ul>
-						<li><a href="../mainpage/index.jsp">¸ŞÀÎÆäÀÌÁö</a></li>
-						<li>
-							<span class="opener">¹æÃ£±â</span>
-							<ul>
-								<li><a href="#">¿ø·ë</a></li>
-								<li><a href="#">¹Ì´ÏÅõ·ë/Åõ·ë</a></li>
-								<li><a href="#">¾²¸®·ë+</a></li>
-							</ul>
-						</li>
-						<li><a href="#">¹æ³»³õ±â</a></li>
-						<li><a href="#">Ä¿¹Â´ÏÆ¼</a></li>
-						<li>
-							<span class="opener">µµ¿ò¸»</span>
-							<ul>
-								<li><a href="#">±İ¹æ ÀÌ¿ë¹æ¹ı</a></li>
-								<li><a href="#">°Å·¡½Ã ÁÖÀÇÇÒÁ¡</a></li>
-								<li><a href="#">¼­·ù¾ç½Ä</a></li>
-							</ul>
-						</li>
-						<li><a href="elements.html">µğÀÚÀÎ¼Ó¼º</a></li>
-						<li><a href="generic.html">Á¦³×¸¯</a></li>
-					</ul>
+	<!-- Menu -->
+	<nav id="menu">
+		<header class="major">
+			<h2>Menu</h2>
+		</header>
+		<ul>
+			<li><a href="../mainpage/index.jsp">ë©”ì¸í˜ì´ì§€</a></li>
+			<li><span class="opener">ë°©ì°¾ê¸°</span>
+				<ul>
+					<li><a href="#">ì›ë£¸</a></li>
+					<li><a href="#">ë¯¸ë‹ˆíˆ¬ë£¸/íˆ¬ë£¸</a></li>
+					<li><a href="#">ì“°ë¦¬ë£¸+</a></li>
+				</ul></li>
+			<li><a href="#">ë°©ë‚´ë†“ê¸°</a></li>
+			<li><a href="../board/list.jsp">ì»¤ë®¤ë‹ˆí‹°</a></li>
+			<li><span class="opener">ë„ì›€ë§</span>
+				<ul>
+					<li><a href="#">ê¸ˆë°© ì´ìš©ë°©ë²•</a></li>
+					<li><a href="#">ê±°ë˜ì‹œ ì£¼ì˜í• ì </a></li>
+					<li><a href="#">ì„œë¥˜ì–‘ì‹</a></li>
+				</ul></li>
+			<li><a href="elements.html">ë””ìì¸ì†ì„±</a></li>
+			<li><a href="generic.html">ì œë„¤ë¦­</a></li>
+		</ul>
 
 
 
 
-				</nav>
+	</nav>
 
-				<ul class="actions">
-					<li><a href="#" class="button big">·Î±×ÀÎ</a></li>
-					<li><a href="#" class="button big">È¸¿ø°¡ÀÔ</a></li>
-				</ul>
+	<ul class="actions">
+		<li><a href="#" class="button big">ë¡œê·¸ì¸</a></li>
+		<li><a href="../member/join.jsp" class="button big">íšŒì›ê°€ì…</a></li>
+	</ul>
 
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2>ÃÖ±Ù º» ¹æ</h2>
-					</header>
-					<div class="mini-posts">
-						<article>
-							<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-						</article>
-					</div>
-					<ul class="actions">
-						<li><a href="#" class="button">´õ ¸¹Àº ¹æ</a></li>
-					</ul>
-				</section>
+	<!-- Section -->
+	<section>
+		<header class="major">
+			<h2>ìµœê·¼ ë³¸ ë°©</h2>
+		</header>
+		<div class="mini-posts">
+			<article>
+				<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+					dolore aliquam.</p>
+			</article>
+			<article>
+				<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+					dolore aliquam.</p>
+			</article>
+			<article>
+				<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+					dolore aliquam.</p>
+			</article>
+		</div>
+		<ul class="actions">
+			<li><a href="#" class="button">ë” ë§ì€ ë°©</a></li>
+		</ul>
+	</section>
 
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2>Get in touch</h2>
-					</header>
-					<p>3KÀÇ ÇÁ·ÎÁ§Æ®¸¦ ÁöÄÑºÁÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.<br /> ¹®ÀÇ»çÇ×Àº ¾Æ·¡·Î ¿¬¶ô ºÎÅ¹µå¸³´Ï´Ù.</p>
-					<ul class="contact">
-						<li class="icon solid fa-envelope"><a href="#">mnb3559@kumoh.ac.kr</a></li>
-						<li class="icon solid fa-phone">010-1234-5678</li>
-						<li class="icon solid fa-home">±İ¿À°ø°ú´ëÇĞ±³<br />ÄÄÇ»ÅÍ¼ÒÇÁÆ®¿ş¾î°øÇĞ°ú</li>
-					</ul>
-				</section>
+	<!-- Section -->
+	<section>
+		<header class="major">
+			<h2>Get in touch</h2>
+		</header>
+		<p>
+			3Kì˜ í”„ë¡œì íŠ¸ë¥¼ ì§€ì¼œë´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.<br /> ë¬¸ì˜ì‚¬í•­ì€ ì•„ë˜ë¡œ ì—°ë½ ë¶€íƒë“œë¦½ë‹ˆë‹¤.
+		</p>
+		<ul class="contact">
+			<li class="icon solid fa-envelope"><a href="#">mnb3559@kumoh.ac.kr</a></li>
+			<li class="icon solid fa-phone">010-1234-5678</li>
+			<li class="icon solid fa-home">ê¸ˆì˜¤ê³µê³¼ëŒ€í•™êµ<br />ì»´í“¨í„°ì†Œí”„íŠ¸ì›¨ì–´ê³µí•™ê³¼
+			</li>
+		</ul>
+	</section>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
-							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
-							UP</a>.</p>
-				</footer>
+	<!-- Footer -->
+	<footer id="footer">
+		<p class="copyright">
+			&copy; Untitled. All rights reserved. Demo Images: <a
+				href="https://unsplash.com">Unsplash</a>. Design: <a
+				href="https://html5up.net">HTML5 UP</a>.
+		</p>
+	</footer>
 
-			</div>
+</div>

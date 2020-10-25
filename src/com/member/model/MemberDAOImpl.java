@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import board.DBConnect;
+import common.DAO.DBConnect;
 
 public class MemberDAOImpl implements MemberDAO
 {
@@ -20,9 +20,9 @@ public class MemberDAOImpl implements MemberDAO
 		return instance;
 	}
 	
-	DBConn dbconn = null;
+	DBConnect dbconn = null;
 	
-	public MemberDAOImpl() { dbconn = new DBConn(); }
+	public MemberDAOImpl() { dbconn = new DBConnect(); }
 	
 //	private Connection getConn() throws Exception
 //	{

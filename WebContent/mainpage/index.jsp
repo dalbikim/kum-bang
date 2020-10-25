@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@ page import="board.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="board.model.*" %>
 <%@ page import="java.util.*" %>
 
 
@@ -8,7 +8,7 @@
 <html>
 
 <head>
-	<title>�ݹ�</title>
+	<title>금방</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -33,10 +33,10 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>�ݹ�</h1>
-							<p>���ϴ� ���� ã�ƺ�����</p>
+							<h1>금방</h1>
+							<p>원하는 방을 찾아보세요</p>
 						</header>
-						<p>�ε���, ������, �л��鰣 �����Ӱ� ���� ����ļ���!</p>
+						<p>부동산, 집주인, 학생들간 자유롭게 방을 사고파세요!</p>
 						<ul class="actions">
 							<li><a href="#" class="button big">Read More</a></li>
 						</ul>
@@ -51,7 +51,7 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>��� ��ϵ� ��</h2>
+						<h2>방금 등록된 방</h2>
 					</header>
 					<div class="posts">
 						<article>
@@ -97,7 +97,7 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2><a href="../board/list.jsp">Ŀ�´�Ƽ</a></h2>
+						<h2><a href="../board/list.jsp">커뮤니티</a></h2>
 					</header>
 					<div class="features">
 						<article>

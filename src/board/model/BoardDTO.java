@@ -1,6 +1,6 @@
-package board;
+package board.model;
 
-public class VO {
+public class BoardDTO {
 	private int num;
 	private String name;
 	private String password;
@@ -14,11 +14,11 @@ public class VO {
 	private boolean dayNew;
 	
 
-	public VO() {
+	public BoardDTO() {
 		
 	}
 	
-	public VO(int num, String name, String password, String title,
+	public BoardDTO(int num, String name, String password, String title,
 			String memo, String time, int hit, int ref, int indent, int step, boolean dayNew) {
 	this.num = num;
 	this.name = name;

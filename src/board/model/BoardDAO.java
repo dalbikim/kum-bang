@@ -1,4 +1,4 @@
-package board;
+package board.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,11 +7,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class DAO {
+import common.DAO.DBClose;
+import common.DAO.DBConnect;
+
+public class BoardDAO {
 	DBConnect dbconnect = null;
 	String sql="";
 	
-	public DAO() {
+	public BoardDAO() {
 		dbconnect = new DBConnect();
 	}
 	
@@ -45,12 +48,12 @@ public class DAO {
 		return data;
 	}
 	
-	public ArrayList<VO> getMemberList() {
+	public ArrayList<BoardDTO> getMemberList() {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		ArrayList<VO> alist = new ArrayList<VO>();
+		ArrayList<BoardDTO> alist = new ArrayList<BoardDTO>();
 		
 		try {
 			sql = "SELECT NUM, USERNAME, TITLE, TIME, HIT, INDENT from board1 order by ref desc, step asc";
@@ -58,7 +61,7 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				VO vo = new VO();
+				BoardDTO vo = new BoardDTO();
 				boolean dayNew = false;
 				vo.setNum(rs.getInt(1));
 				vo.setName(rs.getString(2));
@@ -111,7 +114,7 @@ public class DAO {
 		return max;
 	}
 	
-	public void insertWrite(VO vo, int max) {
+	public void insertWrite(BoardDTO vo, int max) {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		
@@ -133,11 +136,11 @@ public class DAO {
 		}
 	}
 	
-	public VO getView(int idx) {
+	public BoardDTO getView(int idx) {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		VO vo = null;
+		BoardDTO vo = null;
 		
 		try {
 			sql = "SELECT USERNAME, TITLE, MEMO, TIME, HIT, PASSWORD, REF, INDENT, STEP FROM board1 WHERE NUM=?";
@@ -146,7 +149,7 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				vo = new VO();
+				vo = new BoardDTO();
 				vo.setName(rs.getString(1));
 				vo.setTitle(rs.getString(2));
 				vo.setMemo(rs.getString(3));
@@ -183,7 +186,7 @@ public class DAO {
 		}
 	}
 	
-	public boolean checkPassword(VO vo, int idx) {
+	public boolean checkPassword(BoardDTO vo, int idx) {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -227,7 +230,7 @@ public class DAO {
 		}
 	}
 	
-	public void modify(VO vo, int idx) {
+	public void modify(BoardDTO vo, int idx) {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		
@@ -264,7 +267,7 @@ public class DAO {
 		}
 	}
 	
-	public void insertReply(VO vo, int ref, int indent, int step) {
+	public void insertReply(BoardDTO vo, int ref, int indent, int step) {
 		Connection con = dbconnect.getConnection();
 		PreparedStatement pstmt = null;
 		

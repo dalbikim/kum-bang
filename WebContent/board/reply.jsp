@@ -1,43 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ page import="board.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="board.model.*" %>
 
-<jsp:useBean id="dao" class="board.DAO"/>
+<jsp:useBean id="dao" class="board.model.BoardDAO"/>
 <%
 	int idx = Integer.parseInt(request.getParameter("idx"));
 	int pg = Integer.parseInt(request.getParameter("pg"));
-	VO vo = dao.getView(idx);
+	BoardDTO vo = dao.getView(idx);
 %> 
-<script language = "javascript">  // ÀÚ¹Ù ½ºÅ©¸³Æ® ½ÃÀÛ
+<script language = "javascript">  // ìë°” ìŠ¤í¬ë¦½íŠ¸ ì‹œì‘
 
 function replyCheck()
   {
    var form = document.replyform;
    
-   if( !form.name.value )   // form ¿¡ ÀÖ´Â name °ªÀÌ ¾øÀ» ¶§
+   if( !form.name.value )   // form ì— ìˆëŠ” name ê°’ì´ ì—†ì„ ë•Œ
    {
-    alert( "ÀÌ¸§À» Àû¾îÁÖ¼¼¿ä" ); // °æ°íÃ¢ ¶ç¿ò
-    form.name.focus();   // form ¿¡ ÀÖ´Â name À§Ä¡·Î ÀÌµ¿
+    alert( "ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš”" ); // ê²½ê³ ì°½ ë„ì›€
+    form.name.focus();   // form ì— ìˆëŠ” name ìœ„ì¹˜ë¡œ ì´ë™
     return;
    }
    
    if( !form.password.value )
    {
-    alert( "ºñ¹Ğ¹øÈ£¸¦ Àû¾îÁÖ¼¼¿ä" );
+    alert( "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì ì–´ì£¼ì„¸ìš”" );
     form.password.focus();
     return;
    }
    
   if( !form.title.value )
    {
-    alert( "Á¦¸ñÀ» Àû¾îÁÖ¼¼¿ä" );
+    alert( "ì œëª©ì„ ì ì–´ì£¼ì„¸ìš”" );
     form.title.focus();
     return;
    }
  
   if( !form.memo.value )
    {
-    alert( "³»¿ëÀ» Àû¾îÁÖ¼¼¿ä" );
+    alert( "ë‚´ìš©ì„ ì ì–´ì£¼ì„¸ìš”" );
     form.memo.focus();
     return;
    }
@@ -49,7 +49,7 @@ function replyCheck()
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
- <title>°Ô½ÃÆÇ</title>
+ <title>ê²Œì‹œíŒ</title>
  <link rel="stylesheet" href="../assets/css/main.css" />
  </head>
  <body>
@@ -60,35 +60,35 @@ function replyCheck()
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
      <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
       <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-      <td>´ä±Û</td>
+      <td>ë‹µê¸€</td>
       <td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
      </tr>
     </table>
    <table>
      <tr>
       <td>&nbsp;</td>
-      <td align="center">Á¦¸ñ</td>
+      <td align="center">ì œëª©</td>
       <td><input name="title" size="50" maxlength="100" value = "<%=vo.getTitle()%>"></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
     <tr>
       <td>&nbsp;</td>
-      <td align="center">ÀÌ¸§</td>
+      <td align="center">ì´ë¦„</td>
       <td><input name="name" size="50" maxlength="50"></td>
       <td>&nbsp;</td>
      </tr>
       <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
     <tr>
       <td>&nbsp;</td>
-      <td align="center">ºñ¹Ğ¹øÈ£</td>
+      <td align="center">ë¹„ë°€ë²ˆí˜¸</td>
       <td><input name="password" size="50" maxlength="50"></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
      <tr>
       <td>&nbsp;</td>
-      <td align="center">³»¿ë</td>
+      <td align="center">ë‚´ìš©</td>
       <td><textarea name="memo" cols="50" rows="13"></textarea></td>
       <td>&nbsp;</td>
      </tr>
@@ -96,8 +96,8 @@ function replyCheck()
      <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
      <tr align="center">
       <td>&nbsp;</td>
-      <td colspan="2"><input type=button value="µî·Ï"  OnClick="javascript:replyCheck();">
-       <input type=button value="Ãë¼Ò" OnClick="javascript:history.back(-1)">
+      <td colspan="2"><input type=button value="ë“±ë¡"  OnClick="javascript:replyCheck();">
+       <input type=button value="ì·¨ì†Œ" OnClick="javascript:history.back(-1)">
       <td>&nbsp;</td>
      </tr>
     </table>

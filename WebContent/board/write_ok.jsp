@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<jsp:useBean id="dao" class="board.DAO"/>
-<jsp:useBean id="vo" class="board.VO"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:useBean id="dao" class="board.model.BoardDAO"/>
+<jsp:useBean id="vo" class="board.model.BoardDTO"/>
 <jsp:setProperty name="vo" property="*" />
 
 <%	
@@ -11,6 +11,6 @@
 %>
 
   <script language=javascript>
-   self.window.alert("ÀÔ·ÂÇÑ ±ÛÀ» ÀúÀåÇÏ¿´½À´Ï´Ù.");
+   self.window.alert("ì…ë ¥í•œ ê¸€ì„ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
    location.href="list.jsp";
   </script>

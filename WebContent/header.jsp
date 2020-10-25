@@ -1,16 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<a href="../mainpage/index.jsp" class="logo"><strong style="font-size: 30px;">陛规</strong>
-	措切积 规备窍扁</a>
-<ul class="icons">
-	<li><a href="#" class="icon brands fa-twitter"><span
-			class="label">Twitter</span></a></li>
-	<li><a href="#" class="icon brands fa-facebook-f"><span
-			class="label">Facebook</span></a></li>
-	<li><a href="#" class="icon brands fa-snapchat-ghost"><span
-			class="label">Snapchat</span></a></li>
-	<li><a href="#" class="icon brands fa-instagram"><span
-			class="label">Instagram</span></a></li>
-	<li><a href="#" class="icon brands fa-medium-m"><span
-			class="label">Medium</span></a></li>
-</ul>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+			<a href="../mainpage/index.jsp" class="logo"><strong
+				style="font-size: 30px;">旮堧癌</strong> 雽�頃欖儩 氚╆惮頃橁赴</a>
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span
+						class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-snapchat-ghost"><span
+						class="label">Snapchat</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-medium-m"><span
+						class="label">Medium</span></a></li>
+			</ul>

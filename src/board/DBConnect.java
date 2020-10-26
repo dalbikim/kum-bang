@@ -8,7 +8,7 @@ public class DBConnect {
 	public Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/kum-bang?serverTimezone=UTC";
 		String id = "root";
-		String pass = "rlaekfql05";
+		String pass = "4594";
 		
 		Connection con = null;
 		

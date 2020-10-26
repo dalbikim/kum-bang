@@ -43,7 +43,7 @@
 	</nav>
 
 	<ul class="actions">
-		<li><a href="#" class="button big">로그인</a></li>
+		<li><a href="../member/login.jsp" class="button big">로그인</a></li>
 		<li><a href="../member/join.jsp" class="button big">회원가입</a></li>
 	</ul>
 

@@ -26,7 +26,7 @@ public interface MemberDAO
 	public String idCheck(String memberID);
 	
 	// 로그인 체크(리턴값: flag)
-	public int loginCheck(String memberID, String memberPW);
+	public String loginCheck(String memberID, String memberPW);
 	
 	// 전체 회원 수
 	public int countMember();

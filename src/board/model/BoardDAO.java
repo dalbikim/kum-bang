@@ -7,8 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import common.DAO.DBClose;
-import common.DAO.DBConnect;
+import board.DBClose;
+import board.DBConnect;
 
 public class BoardDAO {
 	DBConnect dbconnect = null;
